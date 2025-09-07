@@ -3,8 +3,10 @@ import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Award, Users, Globe, Heart, MapPin, Phone, Mail } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const About = () => {
+  const { t } = useLanguage();
   const awards = [
     {
       year: "2024",
@@ -40,9 +42,9 @@ const About = () => {
       <main className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">About Us</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">{t('about.title')}</h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Creating unforgettable travel experiences for over 15 years
+              {t('about.subtitle')}
             </p>
           </div>
 
@@ -57,9 +59,9 @@ const About = () => {
               <div className="absolute inset-0 bg-gradient-hero flex items-center justify-center">
                 <div className="text-center text-white">
                   <h2 className="text-3xl md:text-5xl font-bold mb-4">
-                    Your Journey Starts Here
+                    {t('about.heroTitle')}
                   </h2>
-                  <p className="text-xl">Passionate about creating magical travel experiences</p>
+                  <p className="text-xl">{t('about.heroSubtitle')}</p>
                 </div>
               </div>
             </div>
@@ -68,9 +70,9 @@ const About = () => {
           {/* Why Choose Us */}
           <section className="mb-16">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Why Choose Our Agency?</h2>
+              <h2 className="text-3xl font-bold mb-4">{t('about.whyChoose')}</h2>
               <p className="text-lg text-muted-foreground">
-                What makes us different from other travel agencies
+                {t('about.whyChooseDesc')}
               </p>
             </div>
             

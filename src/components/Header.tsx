@@ -1,6 +1,6 @@
-import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { 
   NavigationMenu, 
   NavigationMenuContent, 
@@ -18,15 +18,13 @@ import { Menu, Plane, Globe } from "lucide-react";
 
 const Header = () => {
   const location = useLocation();
-  const [language, setLanguage] = useState("en");
+  const { language, setLanguage, t } = useLanguage();
 
   const isActive = (path: string) => location.pathname === path;
 
   const toggleLanguage = () => {
     setLanguage(language === "en" ? "sr" : "en");
   };
-
-  const getText = (en: string, sr: string) => language === "en" ? en : sr;
 
   return (
     <header className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b border-border">
@@ -37,7 +35,7 @@ const Header = () => {
             <Plane className="w-4 h-4 text-white" />
           </div>
           <span className="text-xl font-bold bg-gradient-ocean bg-clip-text text-transparent">
-            {getText("TravelAgency", "TurističkaAgencija")}
+            {t('header.agencyName')}
           </span>
         </Link>
 
@@ -52,13 +50,13 @@ const Header = () => {
                     isActive("/") ? "text-primary" : "text-foreground"
                   }`}
                 >
-                  {getText("Home", "Početna")}
+                  {t('header.home')}
                 </Link>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="text-sm">
-                  {getText("Arrangements", "Aranžmani")}
+                  {t('header.arrangements')}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="grid gap-3 p-6 w-[400px]">
@@ -67,10 +65,10 @@ const Header = () => {
                       className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                     >
                       <div className="text-sm font-medium leading-none">
-                        {getText("Europe", "Evropa")}
+                        {t('header.europe')}
                       </div>
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                        {getText("Discover historic cities and culture", "Otkrijte istorijske gradove i kulturu")}
+                        {t('header.europeDesc')}
                       </p>
                     </Link>
                     <Link 
@@ -78,10 +76,10 @@ const Header = () => {
                       className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                     >
                       <div className="text-sm font-medium leading-none">
-                        {getText("Summer 2025", "Leto 2025")}
+                        {t('header.summer')}
                       </div>
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                        {getText("Beach resorts and sunny destinations", "Morska letovališta i sunčane destinacije")}
+                        {t('header.summerDesc')}
                       </p>
                     </Link>
                     <Link 
@@ -89,10 +87,10 @@ const Header = () => {
                       className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                     >
                       <div className="text-sm font-medium leading-none">
-                        {getText("Winter 2025", "Zima 2025")}
+                        {t('header.winter')}
                       </div>
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                        {getText("Ski resorts and winter adventures", "Skijališta i zimske avanture")}
+                        {t('header.winterDesc')}
                       </p>
                     </Link>
                   </div>
@@ -106,7 +104,7 @@ const Header = () => {
                     isActive("/gallery") ? "text-primary" : "text-foreground"
                   }`}
                 >
-                  {getText("Gallery", "Galerija")}
+                  {t('header.gallery')}
                 </Link>
               </NavigationMenuItem>
 
@@ -117,7 +115,7 @@ const Header = () => {
                     isActive("/my-account") ? "text-primary" : "text-foreground"
                   }`}
                 >
-                  {getText("My Account", "Moj Nalog")}
+                  {t('header.myAccount')}
                 </Link>
               </NavigationMenuItem>
 
@@ -128,7 +126,7 @@ const Header = () => {
                     isActive("/about") ? "text-primary" : "text-foreground"
                   }`}
                 >
-                  {getText("About Us", "O Nama")}
+                  {t('header.about')}
                 </Link>
               </NavigationMenuItem>
             </NavigationMenuList>
@@ -161,25 +159,25 @@ const Header = () => {
                     isActive("/") ? "text-primary" : "text-foreground"
                   }`}
                 >
-                  {getText("Home", "Početna")}
+                  {t('header.home')}
                 </Link>
                 <Link 
                   to="/arrangements/europe" 
                   className="px-4 py-2 text-lg font-medium transition-colors hover:text-primary"
                 >
-                  {getText("Europe", "Evropa")}
+                  {t('header.europe')}
                 </Link>
                 <Link 
                   to="/arrangements/summer" 
                   className="px-4 py-2 text-lg font-medium transition-colors hover:text-primary"
                 >
-                  {getText("Summer 2025", "Leto 2025")}
+                  {t('header.summer')}
                 </Link>
                 <Link 
                   to="/arrangements/winter" 
                   className="px-4 py-2 text-lg font-medium transition-colors hover:text-primary"
                 >
-                  {getText("Winter 2025", "Zima 2025")}
+                  {t('header.winter')}
                 </Link>
                 <Link 
                   to="/gallery" 
@@ -187,7 +185,7 @@ const Header = () => {
                     isActive("/gallery") ? "text-primary" : "text-foreground"
                   }`}
                 >
-                  {getText("Gallery", "Galerija")}
+                  {t('header.gallery')}
                 </Link>
                 <Link 
                   to="/my-account" 
@@ -195,7 +193,7 @@ const Header = () => {
                     isActive("/my-account") ? "text-primary" : "text-foreground"
                   }`}
                 >
-                  {getText("My Account", "Moj Nalog")}
+                  {t('header.myAccount')}
                 </Link>
                 <Link 
                   to="/about" 
@@ -203,7 +201,7 @@ const Header = () => {
                     isActive("/about") ? "text-primary" : "text-foreground"
                   }`}
                 >
-                  {getText("About Us", "O Nama")}
+                  {t('header.about')}
                 </Link>
                 
                 <Button 
@@ -212,7 +210,7 @@ const Header = () => {
                   className="mx-4 mt-4 flex items-center gap-2"
                 >
                   <Globe className="w-4 h-4" />
-                  {getText("Switch to Serbian", "Prebaci na engleski")}
+                  {t('header.switchLanguage')}
                 </Button>
               </nav>
             </SheetContent>

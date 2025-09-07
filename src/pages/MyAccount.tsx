@@ -6,8 +6,10 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Star, Calendar, MapPin, X } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const MyAccount = () => {
+  const { t } = useLanguage();
   const [reservations, setReservations] = useState([
     {
       id: 1,
@@ -74,29 +76,29 @@ const MyAccount = () => {
       <main className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">My Account</h1>
-            <p className="text-lg text-muted-foreground">Manage your reservations and travel history</p>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">{t('account.title')}</h1>
+            <p className="text-lg text-muted-foreground">{t('account.subtitle')}</p>
           </div>
 
           <Tabs defaultValue="reservations" className="max-w-4xl mx-auto">
             <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="reservations">Current Reservations</TabsTrigger>
-              <TabsTrigger value="visited">Visited Destinations</TabsTrigger>
+              <TabsTrigger value="reservations">{t('account.reservations')}</TabsTrigger>
+              <TabsTrigger value="visited">{t('account.visited')}</TabsTrigger>
             </TabsList>
             
             <TabsContent value="reservations" className="space-y-6">
               <div className="text-center mb-8">
-                <h2 className="text-2xl font-bold mb-2">Your Reservations</h2>
+                <h2 className="text-2xl font-bold mb-2">{t('account.reservationsTitle')}</h2>
                 <p className="text-muted-foreground">
-                  You can cancel reservations up to 5 days before departure
+                  {t('account.reservationsDesc')}
                 </p>
               </div>
               
               {reservations.length === 0 ? (
                 <Card>
                   <CardContent className="text-center py-12">
-                    <p className="text-lg text-muted-foreground mb-4">No current reservations</p>
-                    <Button>Browse Arrangements</Button>
+                    <p className="text-lg text-muted-foreground mb-4">{t('account.noReservations')}</p>
+                    <Button>{t('account.browse')}</Button>
                   </CardContent>
                 </Card>
               ) : (
@@ -118,13 +120,13 @@ const MyAccount = () => {
                               <h3 className="text-xl font-bold">{reservation.name}</h3>
                               <div className="flex items-center text-muted-foreground mt-2">
                                 <Calendar className="w-4 h-4 mr-2" />
-                                <span>Departure: {new Date(reservation.startDate).toLocaleDateString()}</span>
+                                <span>{t('account.departure')}: {new Date(reservation.startDate).toLocaleDateString()}</span>
                               </div>
                             </div>
                             <div className="text-right">
                               <div className="text-2xl font-bold text-primary">€{reservation.price}</div>
                               <Badge variant={reservation.status === 'confirmed' ? 'default' : 'secondary'}>
-                                {reservation.status}
+                                {t('account.confirmed')}
                               </Badge>
                             </div>
                           </div>
@@ -137,11 +139,11 @@ const MyAccount = () => {
                                 onClick={() => cancelReservation(reservation.id)}
                               >
                                 <X className="w-4 h-4 mr-2" />
-                                Cancel Reservation
+                                {t('account.cancel')}
                               </Button>
                             ) : (
                               <Badge variant="outline">
-                                Cannot cancel (less than 5 days)
+                                {t('account.cannotCancel')}
                               </Badge>
                             )}
                           </div>
@@ -155,17 +157,17 @@ const MyAccount = () => {
             
             <TabsContent value="visited" className="space-y-6">
               <div className="text-center mb-8">
-                <h2 className="text-2xl font-bold mb-2">Visited Destinations</h2>
+                <h2 className="text-2xl font-bold mb-2">{t('account.visitedTitle')}</h2>
                 <p className="text-muted-foreground">
-                  Rate your experiences to help other travelers
+                  {t('account.visitedDesc')}
                 </p>
               </div>
               
               {visitedDestinations.length === 0 ? (
                 <Card>
                   <CardContent className="text-center py-12">
-                    <p className="text-lg text-muted-foreground mb-4">No visited destinations yet</p>
-                    <Button>Start Your Journey</Button>
+                    <p className="text-lg text-muted-foreground mb-4">{t('account.noVisited')}</p>
+                    <Button>{t('account.startJourney')}</Button>
                   </CardContent>
                 </Card>
               ) : (
@@ -187,18 +189,18 @@ const MyAccount = () => {
                               <h3 className="text-xl font-bold">{destination.name}</h3>
                               <div className="flex items-center text-muted-foreground mt-2">
                                 <Calendar className="w-4 h-4 mr-2" />
-                                <span>Completed: {new Date(destination.completedDate).toLocaleDateString()}</span>
+                                <span>{t('account.completed')}: {new Date(destination.completedDate).toLocaleDateString()}</span>
                               </div>
                             </div>
                             <div className="text-right">
                               <div className="text-lg font-semibold">€{destination.price}</div>
-                              <Badge variant="secondary">Completed</Badge>
+                              <Badge variant="secondary">{t('account.completed')}</Badge>
                             </div>
                           </div>
                           
                           <div className="flex items-center justify-between">
                             <div className="flex items-center gap-2">
-                              <span className="text-sm font-medium">Rate this trip:</span>
+                              <span className="text-sm font-medium">{t('account.rateTrip')}:</span>
                               <div className="flex gap-1">
                                 {[1, 2, 3, 4, 5].map((star) => (
                                   <button
@@ -220,7 +222,7 @@ const MyAccount = () => {
                             
                             {destination.userRating > 0 && (
                               <Badge variant="outline">
-                                Rated {destination.userRating}/5
+                                {t('account.rated')} {destination.userRating}/5
                               </Badge>
                             )}
                           </div>

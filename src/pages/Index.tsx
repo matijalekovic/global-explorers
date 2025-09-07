@@ -5,12 +5,14 @@ import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Star, MapPin, Calendar, Users } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import heroImage from "@/assets/hero-beach.jpg";
 import europeImage from "@/assets/europe-city.jpg";
 import summerImage from "@/assets/summer-resort.jpg";
 import winterImage from "@/assets/winter-ski.jpg";
 
 const Index = () => {
+  const { t } = useLanguage();
   const featuredArrangements = [
     {
       id: 1,
@@ -85,20 +87,20 @@ const Index = () => {
         
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Discover Your Next
+            {t('home.hero.title')}
             <span className="block text-transparent bg-gradient-sunset bg-clip-text">
-              Adventure
+              {t('home.hero.subtitle')}
             </span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto">
-            Explore breathtaking destinations, create unforgettable memories, and experience the world like never before.
+            {t('home.hero.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-3">
-              Explore Destinations
+              {t('home.hero.explore')}
             </Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-3">
-              View Gallery
+              {t('home.hero.gallery')}
             </Button>
           </div>
         </div>
@@ -108,8 +110,8 @@ const Index = () => {
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Current Offers</h2>
-            <p className="text-lg text-muted-foreground">Don't miss these amazing travel deals</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('home.offers.title')}</h2>
+            <p className="text-lg text-muted-foreground">{t('home.offers.subtitle')}</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -142,8 +144,8 @@ const Index = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Top Rated Destinations</h2>
-            <p className="text-lg text-muted-foreground">Experience our most loved travel packages</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('home.topRated.title')}</h2>
+            <p className="text-lg text-muted-foreground">{t('home.topRated.subtitle')}</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -200,7 +202,7 @@ const Index = () => {
                   
                   <div className="pt-4">
                     <Button className="w-full bg-gradient-ocean hover:bg-primary-dark">
-                      Book Now
+                      {t('home.bookNow')}
                     </Button>
                   </div>
                 </CardContent>
@@ -211,7 +213,7 @@ const Index = () => {
           <div className="text-center mt-12">
             <Link to="/arrangements/europe">
               <Button variant="outline" size="lg" className="px-8">
-                View All Arrangements
+                {t('home.viewAll')}
               </Button>
             </Link>
           </div>
