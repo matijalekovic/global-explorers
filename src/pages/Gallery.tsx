@@ -3,8 +3,10 @@ import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Play } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Gallery = () => {
+  const { t } = useLanguage();
   const videoGallery = [
     {
       id: 1,
@@ -65,11 +67,11 @@ const Gallery = () => {
           {/* Video Gallery Section */}
           <section className="mb-16">
             <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">Travel Gallery</h1>
-              <p className="text-lg text-muted-foreground">Experience our destinations through videos and photos</p>
+              <h1 className="text-4xl md:text-5xl font-bold mb-4">{t('gallery.title')}</h1>
+              <p className="text-lg text-muted-foreground">{t('gallery.subtitle')}</p>
             </div>
             
-            <h2 className="text-2xl font-bold mb-8">Video Gallery</h2>
+            <h2 className="text-2xl font-bold mb-8">{t('gallery.videoGallery')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
               {videoGallery.map((video) => (
                 <Card key={video.id} className="overflow-hidden hover:shadow-travel transition-shadow duration-300 group cursor-pointer">
@@ -98,7 +100,7 @@ const Gallery = () => {
 
           {/* Image Gallery Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-8">Photo Gallery</h2>
+            <h2 className="text-2xl font-bold mb-8">{t('gallery.photoGallery')}</h2>
             {imageGallery.map((category, categoryIndex) => (
               <div key={categoryIndex} className="mb-12">
                 <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">

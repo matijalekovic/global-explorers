@@ -80,6 +80,27 @@ const translations = {
     'about.emergency': 'Emergency Contact',
     'about.emergencyDesc': '24/7 support for travelers',
 
+    // Gallery
+    'gallery.title': 'Travel Gallery',
+    'gallery.subtitle': 'Experience our destinations through videos and photos',
+    'gallery.videoGallery': 'Video Gallery',
+    'gallery.photoGallery': 'Photo Gallery',
+
+    // Arrangements
+    'arrangements.europe.title': 'European Adventures',
+    'arrangements.europe.subtitle': 'Discover the rich history and culture of Europe',
+    'arrangements.summer.title': 'Summer 2025',
+    'arrangements.summer.subtitle': 'Escape to paradise with our summer destinations',
+    'arrangements.winter.title': 'Winter 2025',
+    'arrangements.winter.subtitle': 'Embrace the magic of winter with our snow destinations',
+    'arrangements.searchPlaceholder': 'Search arrangements...',
+    'arrangements.sortByName': 'Sort by Name',
+    'arrangements.sortByPrice': 'Sort by Price',
+    'arrangements.reserveNow': 'Reserve Now',
+    'arrangements.reserved': 'Reserved',
+    'arrangements.viewDetails': 'View Details',
+    'arrangements.noResults': 'No arrangements found matching your criteria.',
+
     // Common
     'common.price': 'Price',
     'common.rating': 'Rating',
@@ -164,6 +185,27 @@ const translations = {
     'about.officeHours': 'Radno Vreme',
     'about.emergency': 'Hitni Kontakt',
     'about.emergencyDesc': 'Podrška 24/7 za putnike',
+
+    // Gallery
+    'gallery.title': 'Turistička Galerija',
+    'gallery.subtitle': 'Doživite naše destinacije kroz video i foto galerije',
+    'gallery.videoGallery': 'Video Galerija',
+    'gallery.photoGallery': 'Foto Galerija',
+
+    // Arrangements
+    'arrangements.europe.title': 'Evropske Avanture',
+    'arrangements.europe.subtitle': 'Otkrijte bogatu istoriju i kulturu Evrope',
+    'arrangements.summer.title': 'Leto 2025',
+    'arrangements.summer.subtitle': 'Pobegnite u raj sa našim letnjim destinacijama',
+    'arrangements.winter.title': 'Zima 2025',
+    'arrangements.winter.subtitle': 'Uživajte u čaroliji zime sa našim zimskim destinacijama',
+    'arrangements.searchPlaceholder': 'Pretražite aranžmane...',
+    'arrangements.sortByName': 'Sortiraj po Nazivu',
+    'arrangements.sortByPrice': 'Sortiraj po Ceni',
+    'arrangements.reserveNow': 'Rezerviši Sada',
+    'arrangements.reserved': 'Rezervisano',
+    'arrangements.viewDetails': 'Pogledaj Detalje',
+    'arrangements.noResults': 'Nisu pronađeni aranžmani koji odgovaraju vašim kriterijumima.',
 
     // Common
     'common.price': 'Cena',

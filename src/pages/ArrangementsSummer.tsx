@@ -8,8 +8,12 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Star, MapPin, Calendar, Users, Search } from "lucide-react";
 import summerImage from "@/assets/summer-resort.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { useReservation } from "@/contexts/ReservationContext";
 
 const ArrangementsSummer = () => {
+  const { t } = useLanguage();
+  const { addReservation, isReserved } = useReservation();
   const [searchTerm, setSearchTerm] = useState("");
   const [sortBy, setSortBy] = useState("name");
 
@@ -72,8 +76,8 @@ const ArrangementsSummer = () => {
       <main className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Summer 2025</h1>
-            <p className="text-lg text-muted-foreground">Escape to paradise with our summer destinations</p>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">{t('arrangements.summer.title')}</h1>
+            <p className="text-lg text-muted-foreground">{t('arrangements.summer.subtitle')}</p>
           </div>
 
           {/* Search and Filter */}
@@ -81,7 +85,7 @@ const ArrangementsSummer = () => {
             <div className="relative flex-1 max-w-md">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
               <Input
-                placeholder="Search arrangements..."
+                placeholder={t('arrangements.searchPlaceholder')}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="pl-10"
@@ -90,11 +94,11 @@ const ArrangementsSummer = () => {
             
             <Select value={sortBy} onValueChange={setSortBy}>
               <SelectTrigger className="w-48">
-                <SelectValue placeholder="Sort by" />
+                <SelectValue placeholder={t('common.sortBy')} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="name">Sort by Name</SelectItem>
-                <SelectItem value="price">Sort by Price</SelectItem>
+                <SelectItem value="name">{t('arrangements.sortByName')}</SelectItem>
+                <SelectItem value="price">{t('arrangements.sortByPrice')}</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -151,11 +155,21 @@ const ArrangementsSummer = () => {
                   </div>
                   
                   <div className="pt-4 space-y-2">
-                    <Button className="w-full bg-gradient-ocean hover:bg-primary-dark">
-                      Reserve Now
+                    <Button 
+                      className="w-full bg-gradient-ocean hover:bg-primary-dark"
+                      onClick={() => addReservation({
+                        id: arrangement.id,
+                        name: arrangement.name,
+                        price: arrangement.price,
+                        image: arrangement.image,
+                        category: 'summer'
+                      })}
+                      disabled={isReserved(arrangement.id)}
+                    >
+                      {isReserved(arrangement.id) ? t('arrangements.reserved') : t('arrangements.reserveNow')}
                     </Button>
                     <Button variant="outline" className="w-full">
-                      View Details
+                      {t('arrangements.viewDetails')}
                     </Button>
                   </div>
                 </CardContent>
@@ -165,7 +179,7 @@ const ArrangementsSummer = () => {
 
           {filteredAndSortedArrangements.length === 0 && (
             <div className="text-center py-12">
-              <p className="text-lg text-muted-foreground">No arrangements found matching your criteria.</p>
+              <p className="text-lg text-muted-foreground">{t('arrangements.noResults')}</p>
             </div>
           )}
         </div>

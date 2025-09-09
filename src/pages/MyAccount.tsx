@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -7,29 +7,11 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Star, Calendar, MapPin, X } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useReservation } from "@/contexts/ReservationContext";
 
 const MyAccount = () => {
   const { t } = useLanguage();
-  const [reservations, setReservations] = useState([
-    {
-      id: 1,
-      name: "Prague & Budapest",
-      startDate: "2025-04-15",
-      price: 459,
-      image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      status: "confirmed",
-      canCancel: true
-    },
-    {
-      id: 2,
-      name: "Maldives Paradise",
-      startDate: "2025-06-20",
-      price: 1299,
-      image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      status: "confirmed",
-      canCancel: true
-    }
-  ]);
+  const { reservations, removeReservation } = useReservation();
 
   const [visitedDestinations, setVisitedDestinations] = useState([
     {
@@ -51,7 +33,7 @@ const MyAccount = () => {
   ]);
 
   const cancelReservation = (id: number) => {
-    setReservations(reservations.filter(reservation => reservation.id !== id));
+    removeReservation(id);
   };
 
   const rateDestination = (id: number, rating: number) => {
