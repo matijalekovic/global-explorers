@@ -101,6 +101,54 @@ const translations = {
     'arrangements.viewDetails': 'View Details',
     'arrangements.noResults': 'No arrangements found matching your criteria.',
 
+    // Offers
+    'offers.earlyBird.title': 'Early Bird Summer 2025',
+    'offers.earlyBird.description': 'Book your summer vacation now and save up to 25%',
+    'offers.earlyBird.validity': 'Valid until March 31st',
+    'offers.earlyBird.discount': '25% OFF',
+    'offers.lastMinute.title': 'Last Minute Europe Tours',
+    'offers.lastMinute.description': 'Discover amazing European cities with special prices',
+    'offers.lastMinute.validity': 'Departing this month',
+    'offers.lastMinute.discount': '€200 OFF',
+    'offers.winterSports.title': 'Winter Sports Special',
+    'offers.winterSports.description': 'Perfect ski packages for winter enthusiasts',
+    'offers.winterSports.validity': 'February departures',
+    'offers.winterSports.discount': 'Free equipment',
+
+    // Arrangements data
+    'arrangements.prague.title': 'Prague & Budapest',
+    'arrangements.prague.highlights.architecture': 'Historic architecture',
+    'arrangements.prague.highlights.tours': 'Cultural tours',
+    'arrangements.prague.highlights.cuisine': 'Local cuisine',
+    'arrangements.maldives.title': 'Maldives Paradise',
+    'arrangements.maldives.highlights.resort': 'Luxury resort',
+    'arrangements.maldives.highlights.snorkeling': 'Snorkeling',
+    'arrangements.maldives.highlights.spa': 'Spa treatments',
+    'arrangements.alpine.title': 'Alpine Adventure',
+    'arrangements.alpine.highlights.skiing': 'Skiing lessons',
+    'arrangements.alpine.highlights.views': 'Mountain views',
+    'arrangements.alpine.highlights.chalets': 'Cozy chalets',
+
+    // Stats
+    'stats.travelers': 'Happy Travelers',
+    'stats.destinations': 'Destinations',
+    'stats.experience': 'Years Experience',
+    'stats.satisfaction': 'Satisfaction Rate',
+
+    // Awards
+    'awards.best.title': 'Best Travel Agency',
+    'awards.best.org': 'European Travel Awards',
+    'awards.choice.title': 'Customer Choice Award',
+    'awards.choice.org': 'TripAdvisor',
+    'awards.excellence.title': 'Excellence in Service',
+    'awards.excellence.org': 'World Travel Organization',
+
+    // Office hours
+    'office.monday': 'Monday - Friday',
+    'office.saturday': 'Saturday',
+    'office.sunday': 'Sunday',
+    'office.closed': 'Closed',
+
     // Common
     'common.price': 'Price',
     'common.rating': 'Rating',
@@ -206,6 +254,54 @@ const translations = {
     'arrangements.reserved': 'Rezervisano',
     'arrangements.viewDetails': 'Pogledaj Detalje',
     'arrangements.noResults': 'Nisu pronađeni aranžmani koji odgovaraju vašim kriterijumima.',
+
+    // Offers
+    'offers.earlyBird.title': 'Rano Varanje Leto 2025',
+    'offers.earlyBird.description': 'Rezervišite svoj letnji odmor sada i uštedite do 25%',
+    'offers.earlyBird.validity': 'Važi do 31. marta',
+    'offers.earlyBird.discount': '25% POPUST',
+    'offers.lastMinute.title': 'Last Minute Evropske Ture',
+    'offers.lastMinute.description': 'Otkrijte neverovatne evropske gradove po posebnim cenama',
+    'offers.lastMinute.validity': 'Polazak ovaj mesec',
+    'offers.lastMinute.discount': '€200 POPUST',
+    'offers.winterSports.title': 'Zimski Sportovi Specijal',
+    'offers.winterSports.description': 'Savršeni ski paketi za ljubitelje zime',
+    'offers.winterSports.validity': 'Februarski polasci',
+    'offers.winterSports.discount': 'Besplatna oprema',
+
+    // Arrangements data
+    'arrangements.prague.title': 'Prag i Budimpešta',
+    'arrangements.prague.highlights.architecture': 'Istorijska arhitektura',
+    'arrangements.prague.highlights.tours': 'Kulturne ture',
+    'arrangements.prague.highlights.cuisine': 'Lokalna kuhinja',
+    'arrangements.maldives.title': 'Maldivi Raj',
+    'arrangements.maldives.highlights.resort': 'Luksuzni resort',
+    'arrangements.maldives.highlights.snorkeling': 'Ronjenje',
+    'arrangements.maldives.highlights.spa': 'Spa tretmani',
+    'arrangements.alpine.title': 'Alpska Avantura',
+    'arrangements.alpine.highlights.skiing': 'Časovi skijanja',
+    'arrangements.alpine.highlights.views': 'Planinski pogledi',
+    'arrangements.alpine.highlights.chalets': 'Udobne vikendice',
+
+    // Stats
+    'stats.travelers': 'Zadovoljnih Putnika',
+    'stats.destinations': 'Destinacija',
+    'stats.experience': 'Godina Iskustva',
+    'stats.satisfaction': 'Stopa Zadovoljstva',
+
+    // Awards
+    'awards.best.title': 'Najbolja Turistička Agencija',
+    'awards.best.org': 'Evropske Turističke Nagrade',
+    'awards.choice.title': 'Nagrada Izbora Kupaca',
+    'awards.choice.org': 'TripAdvisor',
+    'awards.excellence.title': 'Izvrsnost u Usluzi',
+    'awards.excellence.org': 'Svetska Turistička Organizacija',
+
+    // Office hours
+    'office.monday': 'Ponedeljak - Petak',
+    'office.saturday': 'Subota',
+    'office.sunday': 'Nedelja',
+    'office.closed': 'Zatvoreno',
 
     // Common
     'common.price': 'Cena',

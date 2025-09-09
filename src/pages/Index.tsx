@@ -16,60 +16,72 @@ const Index = () => {
   const featuredArrangements = [
     {
       id: 1,
-      title: "Prague & Budapest",
-      category: "Europe",
+      title: t('arrangements.prague.title'),
+      category: t('header.europe'),
       price: "€459",
       rating: 4.8,
       reviews: 234,
       image: europeImage,
-      duration: "5 days",
-      groupSize: "12-16 people",
-      highlights: ["Historic architecture", "Cultural tours", "Local cuisine"]
+      duration: `5 ${t('common.days')}`,
+      groupSize: `12-16 ${t('common.people')}`,
+      highlights: [
+        t('arrangements.prague.highlights.architecture'),
+        t('arrangements.prague.highlights.tours'),
+        t('arrangements.prague.highlights.cuisine')
+      ]
     },
     {
       id: 2,
-      title: "Maldives Paradise",
-      category: "Summer 2025",
+      title: t('arrangements.maldives.title'),
+      category: t('header.summer'),
       price: "€1,299",
       rating: 4.9,
       reviews: 189,
       image: summerImage,
-      duration: "7 days",
-      groupSize: "8-12 people",
-      highlights: ["Luxury resort", "Snorkeling", "Spa treatments"]
+      duration: `7 ${t('common.days')}`,
+      groupSize: `8-12 ${t('common.people')}`,
+      highlights: [
+        t('arrangements.maldives.highlights.resort'),
+        t('arrangements.maldives.highlights.snorkeling'),
+        t('arrangements.maldives.highlights.spa')
+      ]
     },
     {
       id: 3,
-      title: "Alpine Adventure",
-      category: "Winter 2025",
+      title: t('arrangements.alpine.title'),
+      category: t('header.winter'),
       price: "€789",
       rating: 4.7,
       reviews: 156,
       image: winterImage,
-      duration: "6 days",
-      groupSize: "10-14 people",
-      highlights: ["Skiing lessons", "Mountain views", "Cozy chalets"]
+      duration: `6 ${t('common.days')}`,
+      groupSize: `10-14 ${t('common.people')}`,
+      highlights: [
+        t('arrangements.alpine.highlights.skiing'),
+        t('arrangements.alpine.highlights.views'),
+        t('arrangements.alpine.highlights.chalets')
+      ]
     }
   ];
 
   const currentOffers = [
     {
-      title: "Early Bird Summer 2025",
-      description: "Book your summer vacation now and save up to 25%",
-      validity: "Valid until March 31st",
-      discount: "25% OFF"
+      title: t('offers.earlyBird.title'),
+      description: t('offers.earlyBird.description'),
+      validity: t('offers.earlyBird.validity'),
+      discount: t('offers.earlyBird.discount')
     },
     {
-      title: "Last Minute Europe Tours",
-      description: "Discover amazing European cities with special prices",
-      validity: "Departing this month",
-      discount: "€200 OFF"
+      title: t('offers.lastMinute.title'),
+      description: t('offers.lastMinute.description'),
+      validity: t('offers.lastMinute.validity'),
+      discount: t('offers.lastMinute.discount')
     },
     {
-      title: "Winter Sports Special",
-      description: "Perfect ski packages for winter enthusiasts",
-      validity: "February departures",
-      discount: "Free equipment"
+      title: t('offers.winterSports.title'),
+      description: t('offers.winterSports.description'),
+      validity: t('offers.winterSports.validity'),
+      discount: t('offers.winterSports.discount')
     }
   ];
 

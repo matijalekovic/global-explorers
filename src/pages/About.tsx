@@ -10,29 +10,29 @@ const About = () => {
   const awards = [
     {
       year: "2024",
-      title: "Best Travel Agency",
-      organization: "European Travel Awards",
+      title: t('awards.best.title'),
+      organization: t('awards.best.org'),
       icon: <Award className="w-6 h-6" />
     },
     {
       year: "2023",
-      title: "Customer Choice Award",
-      organization: "TripAdvisor",
+      title: t('awards.choice.title'),
+      organization: t('awards.choice.org'),
       icon: <Heart className="w-6 h-6" />
     },
     {
       year: "2023",
-      title: "Excellence in Service",
-      organization: "World Travel Organization",
+      title: t('awards.excellence.title'),
+      organization: t('awards.excellence.org'),
       icon: <Globe className="w-6 h-6" />
     }
   ];
 
   const stats = [
-    { number: "10,000+", label: "Happy Travelers" },
-    { number: "150+", label: "Destinations" },
-    { number: "15", label: "Years Experience" },
-    { number: "98%", label: "Satisfaction Rate" }
+    { number: "10,000+", label: t('stats.travelers') },
+    { number: "150+", label: t('stats.destinations') },
+    { number: "15", label: t('stats.experience') },
+    { number: "98%", label: t('stats.satisfaction') }
   ];
 
   return (
@@ -82,10 +82,9 @@ const About = () => {
                   <div className="w-16 h-16 bg-gradient-ocean rounded-full flex items-center justify-center mx-auto mb-4">
                     <Users className="w-8 h-8 text-white" />
                   </div>
-                  <CardTitle>Expert Team</CardTitle>
+                  <CardTitle>{t('about.expertTeam')}</CardTitle>
                   <CardDescription>
-                    Our experienced travel consultants have visited every destination we offer, 
-                    providing you with insider knowledge and personal recommendations.
+                    {t('about.expertDesc')}
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -95,10 +94,9 @@ const About = () => {
                   <div className="w-16 h-16 bg-gradient-sunset rounded-full flex items-center justify-center mx-auto mb-4">
                     <Globe className="w-8 h-8 text-white" />
                   </div>
-                  <CardTitle>Global Network</CardTitle>
+                  <CardTitle>{t('about.globalNetwork')}</CardTitle>
                   <CardDescription>
-                    With partners worldwide, we ensure seamless travel experiences 
-                    and 24/7 support wherever your adventure takes you.
+                    {t('about.globalDesc')}
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -108,10 +106,9 @@ const About = () => {
                   <div className="w-16 h-16 bg-gradient-ocean rounded-full flex items-center justify-center mx-auto mb-4">
                     <Heart className="w-8 h-8 text-white" />
                   </div>
-                  <CardTitle>Personalized Service</CardTitle>
+                  <CardTitle>{t('about.personalizedService')}</CardTitle>
                   <CardDescription>
-                    Every trip is tailored to your preferences and budget. 
-                    We listen to your dreams and make them reality.
+                    {t('about.personalizedDesc')}
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -121,7 +118,7 @@ const About = () => {
           {/* Statistics */}
           <section className="mb-16 bg-muted/30 rounded-2xl p-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Our Journey in Numbers</h2>
+              <h2 className="text-3xl font-bold mb-4">{t('about.journeyNumbers')}</h2>
             </div>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -137,9 +134,9 @@ const About = () => {
           {/* Awards */}
           <section className="mb-16">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Awards & Recognition</h2>
+              <h2 className="text-3xl font-bold mb-4">{t('about.awards')}</h2>
               <p className="text-lg text-muted-foreground">
-                Honored by industry leaders for our commitment to excellence
+                {t('about.awardsDesc')}
               </p>
             </div>
             
@@ -163,7 +160,7 @@ const About = () => {
           <section className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Map */}
             <div>
-              <h2 className="text-2xl font-bold mb-6">Visit Our Office</h2>
+              <h2 className="text-2xl font-bold mb-6">{t('about.visitOffice')}</h2>
               <Card className="overflow-hidden">
                 <div className="h-64 bg-muted relative">
                   <iframe
@@ -200,28 +197,28 @@ const About = () => {
 
             {/* Office Hours */}
             <div>
-              <h2 className="text-2xl font-bold mb-6">Office Hours</h2>
+              <h2 className="text-2xl font-bold mb-6">{t('about.officeHours')}</h2>
               <Card>
                 <CardContent className="p-6">
                   <div className="space-y-4">
                     <div className="flex justify-between">
-                      <span className="font-medium">Monday - Friday</span>
+                      <span className="font-medium">{t('office.monday')}</span>
                       <span>9:00 AM - 6:00 PM</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="font-medium">Saturday</span>
+                      <span className="font-medium">{t('office.saturday')}</span>
                       <span>10:00 AM - 4:00 PM</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="font-medium">Sunday</span>
-                      <span>Closed</span>
+                      <span className="font-medium">{t('office.sunday')}</span>
+                      <span>{t('office.closed')}</span>
                     </div>
                   </div>
                   
                   <div className="border-t pt-4 mt-6">
-                    <h3 className="font-semibold mb-2">Emergency Contact</h3>
+                    <h3 className="font-semibold mb-2">{t('about.emergency')}</h3>
                     <p className="text-sm text-muted-foreground mb-2">
-                      24/7 support for travelers
+                      {t('about.emergencyDesc')}
                     </p>
                     <div className="flex items-center">
                       <Phone className="w-4 h-4 text-primary mr-2" />
